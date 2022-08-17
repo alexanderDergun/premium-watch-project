@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodenon app.js -e js,jsx,json --ignore ./session",
-    "db": "npx sequelize db:drop && npx sequelize db:create && npx sequelize db:migrate && npx sequelize db:seed:all",
+    "dev": "nodemon app.js -e js,jsx,json --ignore ./session",
+    "db": "npx sequelize db:drop && npx sequelize db:create && npx sequelize db:migrate && npx sequelize db:seed:all"
   },
   "repository": {
     "type": "git",
