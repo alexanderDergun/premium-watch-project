@@ -8,26 +8,25 @@ module.exports = {
           primaryKey: true,
           type: Sequelize.INTEGER
         },
-        username: {
+        watchName: {
           type: Sequelize.TEXT,
-          allowNull: false,
+          allowNull: false
         },
-        email: {
+        picture: {
           type: Sequelize.TEXT,
-          allowNull: false,
-          unique: true,
+          allowNull: false
         },
-        phone: {
+        description: {
+          type: Sequelize.TEXT,
+          allowNull: false
+        },
+        price: {
           type: Sequelize.INTEGER,
-          allowNull: false,
+          allowNull: false
         },
-        password: {
-          type: Sequelize.TEXT,
-          allowNull: false,
-        },
-        isAdmin: {
-          type: Sequelize.BOOLEAN,
-          allowNull: false,
+        userId: {
+          type: Sequelize.INTEGER,
+          allowNull: false
         },
         createdAt: {
           allowNull: false,
@@ -39,10 +38,9 @@ module.exports = {
         }
     }
 
-
-    await queryInterface.createTable('Users', attributes);
+    await queryInterface.createTable('Watches', attributes);
   },
   async down(queryInterface) {
-    await queryInterface.dropTable('Users');
+    await queryInterface.dropTable('Watches');
   }
 };

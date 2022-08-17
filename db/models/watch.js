@@ -1,6 +1,6 @@
 const { Model } = require("sequelize");
 module.exports = (sequelize, DataTypes) => {
-  class User extends Model {
+  class Watch extends Model {
     static associate(models) {
       // define association here
     }
@@ -13,25 +13,24 @@ module.exports = (sequelize, DataTypes) => {
       primaryKey: true,
       type: DataTypes.INTEGER,
     },
-    username: {
+    watchName: {
       type: DataTypes.TEXT,
       allowNull: false,
     },
-    email: {
+    picture: {
       type: DataTypes.TEXT,
       allowNull: false,
-      unique: true,
     },
-    phone: {
+    description: {
+      type: DataTypes.TEXT,
+      allowNull: false,
+    },
+    price: {
       type: DataTypes.INTEGER,
       allowNull: false,
     },
-    password: {
-      type: DataTypes.TEXT,
-      allowNull: false,
-    },
-    isAdmin: {
-      type: DataTypes.BOOLEAN,
+    userId: {
+      type: DataTypes.INTEGER,
       allowNull: false,
     },
     createdAt: {
@@ -46,10 +45,10 @@ module.exports = (sequelize, DataTypes) => {
 
   const options = {
     sequelize,
-    modelName: "User",
-    tableName: "Users",
+    modelName: "Watch",
+    tableName: "Watches",
   };
 
-  User.init(attributes, options);
-  return User;
+  Watch.init(attributes, options);
+  return Watch;
 };
