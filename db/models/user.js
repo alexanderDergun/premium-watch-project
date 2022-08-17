@@ -1,8 +1,10 @@
 const { Model } = require("sequelize");
 module.exports = (sequelize, DataTypes) => {
   class User extends Model {
-    static associate(models) {
+    static associate({ Watch }) {
       // define association here
+
+      User.hasMany(Watch, { foreignKey: "userId" });
     }
   }
 

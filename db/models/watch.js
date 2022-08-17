@@ -1,8 +1,9 @@
 const { Model } = require("sequelize");
 module.exports = (sequelize, DataTypes) => {
   class Watch extends Model {
-    static associate(models) {
+    static associate({ User }) {
       // define association here
+      Watch.belongsTo(User, { foreignKey: "userId" });
     }
   }
 
@@ -32,6 +33,10 @@ module.exports = (sequelize, DataTypes) => {
     userId: {
       type: DataTypes.INTEGER,
       allowNull: false,
+      references: {
+        model: "Users",
+        key: "id",
+      },
     },
     createdAt: {
       allowNull: false,
