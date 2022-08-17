@@ -130,7 +130,6 @@ dist
 .pnp.*
 
 .babelrc
-.sequelizerc
 .eslintrc.js
 session
 .DS_Store
