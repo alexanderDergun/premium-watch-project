@@ -40,6 +40,7 @@ build/Release
 
 # Dependency directories
 node_modules/
+sessions/
 jspm_packages/
 
 # Snowpack dependency directory (https://snowpack.dev/)
@@ -129,7 +130,7 @@ dist
 .yarn/install-state.gz
 .pnp.*
 
+
 .babelrc
 .eslintrc.js
-session
 .DS_Store
