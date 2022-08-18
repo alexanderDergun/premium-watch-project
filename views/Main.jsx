@@ -1,11 +1,14 @@
 const React = require('react');
 const Card = require('./Card');
 const Layout = require('./Layout');
+const MainCard = require('./MainCard');
 
 module.exports = function Main() {
     return (
         <Layout>
             <div className='container'>
+                <div className='containerLeft'>
+
                 <div className='headerContainer'>
                     <h1>
                         Watches that show much
@@ -16,7 +19,7 @@ module.exports = function Main() {
                         for all purposes and ages.
                     </h4>
                 </div>
-                <div className='catalog'>
+                <div className='catalogContainer'>
                     <div className='catalogHeader'>
                         <span> Catalog </span>
                         <div className='catalogArrows'>
@@ -38,6 +41,10 @@ module.exports = function Main() {
                         <Card />
                         <Card />
                     </div>
+                </div>
+                </div>
+                <div className='mainCardContainer'>
+                        <MainCard />
                 </div>
             </div>
         </Layout>

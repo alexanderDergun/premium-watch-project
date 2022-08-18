@@ -14,11 +14,12 @@ h1 {
 }
 
 .container {
+    display: flex;
     margin-top: 80px;
 }
 
 
-.catalog {
+.catalogContainer {
     display: flex;
     flex-direction: column;
 }
