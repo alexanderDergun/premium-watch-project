@@ -14,11 +14,11 @@ module.exports = function Layout({ children, title, user }) {
       </head>
       <body>
         <header>
-          <nav className="navbar fixed-top navbar-light bg-light padding20px" id="navHeader">
+          <nav className="navbar  navbar-light bg-light padding20px" id="navHeader">
             <a className="nav-link" id="loginLink" href="#">{user}</a>
-            <a className="navbar-brand" href="#">Fixed top</a>
-            <a className="nav-link" id="loginLink" href="#">Войти</a>
-            <a className="nav-link" id="regLink" href="#">Зарегестрироваться</a>
+            <a className="navbar-brand" href="/">Fixed top</a>
+            <a className="nav-link" id="loginLink" href="/login">Войти</a>
+            <a className="nav-link" id="regLink" href="/rega">Зарегестрироваться</a>
           </nav>
         </header>
         {children}
