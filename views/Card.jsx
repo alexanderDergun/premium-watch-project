@@ -1,13 +1,13 @@
 const React = require('react');
 
-module.exports = function Card() {
+module.exports = function Card({card}) {
     return (
-        <div className="cardCointainer">
+        <div className="cardCointainer" data-id={card.id}>
             <div className='cardContainerImg'>
-                <img className="cardImg" src='/img/img1.png'></img>
+                <img className="cardImg" src={card.picture}></img>
             </div>
-            <span className="cardCointeainerHeader">Zoro Mindsweep G</span>
-            <span className="cardPrice">$169</span>
+            <span className="cardCointeainerHeader">{card.watchName}</span>
+            <span className="cardPrice">{card.price}</span>
             <button>В корзину</button>
         </div>
     )

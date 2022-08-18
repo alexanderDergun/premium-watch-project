@@ -3,7 +3,7 @@ const Card = require('./Card');
 const Layout = require('./Layout');
 const MainCard = require('./MainCard');
 
-module.exports = function Main({user}) {
+module.exports = function Main({user, watchArr}) {
     // console.log(user);
     return (
         <Layout user={user}>
@@ -37,9 +37,10 @@ module.exports = function Main({user}) {
                         </div>
                     </div>
                     <div className="catalogList">
-                        <Card />
-                        <Card />
-                        <Card />
+                        {watchArr.length !== 0 
+                            ? watchArr.map((card) => <Card card={card}/>)
+                            : <div>Карт нет</div>
+                        }
                     </div>
                 </div>
                 </div>

@@ -18,6 +18,7 @@ RegaRout.post('/', async (req, res) => {
       isAdmin: false,
     })
 
+
     req.session.user = user;
     res.redirect('/');
   } catch (error) {
