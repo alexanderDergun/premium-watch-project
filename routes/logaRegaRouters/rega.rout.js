@@ -18,7 +18,7 @@ RegaRout.post('/', async (req, res) => {
       isAdmin: false,
     })
 
-    res.redirect('/');
+    res.redirect('/login');
   } catch (error) {
     res.json({error: error.message, data: null});
   }

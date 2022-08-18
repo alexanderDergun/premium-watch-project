@@ -63,3 +63,8 @@ h1 {
     width: 100%;
 }
 
+
+.cardImg {
+    max-width: 190px;
+}
+
