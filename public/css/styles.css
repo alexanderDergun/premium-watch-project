@@ -18,6 +18,11 @@ h1 {
     margin-top: 80px;
 }
 
+.containerLeft {
+    display: flex;
+    flex-direction: column;
+}
+
 
 .catalogContainer {
     display: flex;
