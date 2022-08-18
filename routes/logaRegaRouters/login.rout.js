@@ -10,6 +10,7 @@ LoginRout.get("/", (req, res) => {
 LoginRout.post("/", async (req, res) => {
   const { email, password } = req.body;
   const user = await User.findOne({
+    raw: true,
     where: { email },
   });
 
