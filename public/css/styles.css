@@ -19,13 +19,35 @@ h1 {
 
 
 .catalog {
-    
+    display: flex;
+    flex-direction: column;
 }
 
+.catalogHeader {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.catalogArrows {
+    display: flex;
+    flex-direction: row;
+}
+
+
 .cardCointainer {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
     width: 210px;
     height: 325px;
     background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.51) 0.01%, rgba(210, 210, 210, 0.51) 100%);
     /* filter: drop-shadow(-9px 5px 80px rgba(0, 0, 0, 0.13)); */
     border-radius: 8px;
+
+}
+
+.cardContainerImg {
+    display: inline-block;
+    width: 100%;
 }
