@@ -3,16 +3,16 @@ const Card = require('./Card');
 const Layout = require('./Layout');
 const MainCard = require('./MainCard');
 
-module.exports = function Main() {
+module.exports = function Main({user}) {
+    // console.log(user);
     return (
-        <Layout>
+        <Layout user={user}>
             <div className='container'>
                 <div className='containerLeft'>
-
                 <div className='headerContainer'>
                     <h1>
                         Watches that show much
-                        more than just time ! 😵
+                        more than just time ! 😵 
                     </h1>
                     <h4>
                         Handpicked collection of premium time keepers
