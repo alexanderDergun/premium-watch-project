@@ -3,7 +3,6 @@ const { application } = require("express");
 const form = document.querySelector('#logForm');
 const btnLogin = document.querySelector('#btnLogin')
 
-
 form.addEventListener('submit', async (event) => {
     event.preventDefault();
     const {email, password, action, method} = event.target
@@ -23,3 +22,5 @@ form.addEventListener('submit', async (event) => {
     }
 
 })
+
+
