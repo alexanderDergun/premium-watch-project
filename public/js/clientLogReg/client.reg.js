@@ -1,3 +1,4 @@
+const {application} =require('express')
 const regForm = document.getElementById('regForm');
 
 if (regForm) {
@@ -6,8 +7,8 @@ if (regForm) {
 
         const { name, email, phone, password, reppassword, action, method } = event.target;
         
-            console.log(email.value);
-            
+        if (password.value === reppassword.value ) {
+
             const response = await fetch(action, {
                 method,
                 headers: {
@@ -20,9 +21,11 @@ if (regForm) {
                     password: password.value,
                 })
             })
-
-            const jsonResponse = await response.json();
+            // const jsonResponse = await response.json();
             // console.log(jsonResponse);
+        } else {
+            alert('Пароли не совпадают')
+        }
 
     })
 }
