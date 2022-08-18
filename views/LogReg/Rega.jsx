@@ -4,7 +4,7 @@ const Layout = require('../Layout');
 module.exports = function Rega() {
   return (
     <Layout>
-      <form id="logForm" action="/rega" method="POST">
+      <form id="regForm" action="/rega" method="POST">
         <label>
           {' '}
           Имя:
@@ -26,7 +26,7 @@ module.exports = function Rega() {
           Повторите пароль
           <input name="reppassword" type="password" />
         </label>
-        <a href="/rega"><button type="submit">Зарегистрироваться</button></a>
+        <button type="submit">Зарегистрироваться</button>
       </form>
     </Layout>
   );
