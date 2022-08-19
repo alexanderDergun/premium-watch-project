@@ -7,9 +7,9 @@ module.exports = function Card({ card }) {
                 <img className="cardImg" src={card.picture} data-id={card.id}></img>
             </div> */}
             <img className="cardImg" src={card.picture} data-id={card.id}></img>
-            <span className="cardCointeainerHeader" data-id={card.id}> {card.watchName} </span>
-            <span className="cardPrice" data-id={card.id}> {card.price} </span>
-            <button>В корзину</button>
+            <h5><span className="cardCointeainerHeader" data-id={card.id}> {card.watchName}</span></h5> 
+            <h6><span className="cardPrice" data-id={card.id}> {card.price} </span></h6>
+            <button id="cardBtn">В корзину</button>
         </div>
     )
 }
