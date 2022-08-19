@@ -117,10 +117,10 @@ h4 {
     padding: 20px;
     position: absolute;
     background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.51) 0.01%, rgba(210, 210, 210, 0.51) 100%);
-    height: 300px;
+    height: 400px;
     width: 400px;
     background-color: ;
-    top: 30vh;
+    top: 20vh;
     left: 40vw;
     border-radius: 8px;
 }
@@ -128,6 +128,11 @@ h4 {
 label {
     
 }
+
+input {
+
+    width: 360px;
+  }
 
 button {
     margin: 20px;
@@ -151,10 +156,24 @@ button {
     outline: none;
   }
 
+  .btn {
+    margin-left: 0;
+  }
+
+  .btn-success {
+    background-color: #6CC002;
+  }
+
+  .btn-light {
+    color: #6CC002;
+    background: transparent;
+    border-color: #6CC002;
+  }
+
   /* 16 */
 .btn-16 {
     border: none;
-    color: #000;
+    color: #6CC002;
   }
   .btn-16:after {
     position: absolute;
@@ -173,7 +192,7 @@ button {
     transition: all 0.3s ease;
   }
   .btn-16:hover {
-    color: #000;
+    color: #6CC002;
   }
   .btn-16:hover:after {
     left: auto;
@@ -183,3 +202,4 @@ button {
   .btn-16:active {
     top: 2px;
   }
+
