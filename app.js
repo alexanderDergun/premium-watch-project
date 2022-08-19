@@ -6,6 +6,7 @@ const Config = require('./config/config');
 const MainRouter = require('./routes/main.router');
 const RegaRouter = require('./routes/logaRegaRouters/rega.rout');
 const LoginRouter = require('./routes/logaRegaRouters/login.rout');
+const LkRout = require('./routes/lk.router');
 
 // Подключаем конфигурации
 Config(app);
@@ -16,5 +17,6 @@ const PORT = process.env.PORT ?? 3000;
 app.use('/', MainRouter);
 app.use('/rega', RegaRouter);
 app.use('/login', LoginRouter);
+app.use('/lk', LkRout);
 
 app.listen(PORT, () => console.log('Секрет успеха — сделать первый шаг'));
