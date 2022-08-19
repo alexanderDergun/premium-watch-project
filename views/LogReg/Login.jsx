@@ -13,7 +13,7 @@ module.exports = function Login() {
           Пароль:
           <input name="password" type="password" />
         </label>
-        <a href="/login"><button id='btnLogin' type="submit">Войти</button></a>
+        <a href="/login"><button id='btnLogin' className="custom-btn btn-16"  type="submit">Войти</button></a>
       </form>
     </Layout>
   );
