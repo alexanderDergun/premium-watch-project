@@ -4,6 +4,9 @@ const AddNewFile = require("../views/AddNewFile");
 const { query } = require("express");
 const LkRout = require("express").Router();
 const { User } = require("../db/models");
+
+const { Watch } = require("../db/models");
+
 const { CustomWatch } = require("../db/models");
 
 
@@ -45,26 +48,22 @@ LkRout.get("/newFile", (req, res) => {
 
 
 LkRout.post("/newFile", async (req, res) => {
-  const {watchName, picture, description, price} = req.body;
-  const {id} = req.session.user;
+  const { watchName, picture, description, price } = req.body;
+  const {id} = req.session.user
 
-  console.log(watchName, picture, description, price);
+  try {
+      const data = await Watch.create(
+        { 
+          watchName,
+          picture,
+          description,
+          price,
+          userId: id,
+        });
+  } catch (error) {
+    res.status(500).send('Something broke!');
+  }
 
-
-  // try {
-    const customWatchData = await CustomWatch.create(
-      { watchName,
-        picture,
-        description, 
-        price,
-        userId: id,
-      })
-      res.redirect('/');
-  // } catch (error) {
-  //   res.status(500).send('Something broke!');
-  // }
 });
-
-
 
 module.exports = LkRout;

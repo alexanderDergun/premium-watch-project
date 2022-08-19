@@ -14,13 +14,17 @@ module.exports = function Lk ({user}) {
             </label>
             <br/>
             
-
-
-            <a className="btn btn-success" href="/lk/editor">Изменить данные</a>
-            <a className="btn btn-success" href="/lk/newFile">Добавить эскиз</a>
-
-
-
+            {user.isAdmin 
+            ? 
+            <>
+            <a className="btn btn-dark" href="/lk/editor">Изменить данные</a>
+              <a className="btn btn-dark" href="/lk/newFile">Добавить карточку товара</a>
+             
+            </>
+            :
+            <>
+            <a className="btn btn-dark" href="/lk/editor">Изменить данные</a>
+            <a className="btn btn-dark" href="/lk/newFile">Добавить эскиз</a>
 
             <div>
                 <label>Мои заказы</label>
@@ -28,6 +32,8 @@ module.exports = function Lk ({user}) {
            
                 </ul>
             </div>
+            </>
+            }
 
         </form>
         </Layout>

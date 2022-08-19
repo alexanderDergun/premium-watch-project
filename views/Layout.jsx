@@ -12,14 +12,18 @@ module.exports = function Layout({ children, title, user }) {
         <title>{title}</title>
         <link href="/css/styles.css" rel="stylesheet" />
         <script defer src="/js/client.js" />
-        <script defer src="/js/lk.client.js" />
+
+        <script defer src="/js/addCard.js" />
+        {/* <script defer src="/js/delete.js" /> */}
+        <script defer src="/js/modalClient.js" />
+
         <script defer src="/js/clientLogReg/client.reg.js" />
         <script defer src="/js/clientLogReg/client.login.js" />
         <script defer src="/js/modalClient.js" />
 
 
       </head>
-      <body>
+      <body id='BODY'>
         <header>
           {user
 
