@@ -1,6 +1,7 @@
 const MainRouter = require('express').Router();
 const Main = require('../views/Main');
-const {Watch} = require('../db/models')
+const {Watch} = require('../db/models');
+const WatchModal = require('../views/WatchModal');
 
 
 
@@ -23,6 +24,20 @@ MainRouter.get('/logout', (req, res) => {
     .redirect('/');
     });
     });
+
+MainRouter.get('/:id/modal', async (req,res) => {
+    const id = Number(req.params.id);
+
+    try {
+        const card = await Watch.findByPk(id);
+        res.renderComponent(WatchModal, { card });
+    } catch {
+        res.json({
+            error: `Часов с таким id ${id} не существует`,
+            data: null,
+        })
+    }
+});
 
 
 module.exports = MainRouter;
