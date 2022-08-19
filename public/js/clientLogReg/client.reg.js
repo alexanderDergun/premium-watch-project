@@ -1,14 +1,11 @@
-const {application} =require('express')
+const { application } = require('express');
 const regForm = document.getElementById('regForm');
 
 if (regForm) {
     regForm.addEventListener('submit', async (event) => {
         event.preventDefault();
-
         const { name, email, phone, password, reppassword, action, method } = event.target;
-        
-        if (password.value === reppassword.value ) {
-
+        if (password.value === reppassword.value) {
             const response = await fetch(action, {
                 method,
                 headers: {
@@ -21,8 +18,12 @@ if (regForm) {
                     password: password.value,
                 })
             })
-            // const jsonResponse = await response.json();
-            // console.log(jsonResponse);
+            const jsonResponse = await response.json();
+            
+            if (jsonResponse.registration) {
+                alert('Пользователь с таким email или именем существует');
+            }
+            console.log(jsonResponse);
         } else {
             alert('Пароли не совпадают')
         }

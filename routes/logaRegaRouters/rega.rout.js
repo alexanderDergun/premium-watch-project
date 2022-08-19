@@ -8,30 +8,28 @@ RegaRout.get('/', (req, res) => {
 });
 
 RegaRout.post('/', async (req, res) => {
-  
+  const { name, email, phone, password } = req.body;
   try {
-    const user = await User.create({
-      username: req.body.name,
-      email: req.body.email,
-      phone: req.body.phone,
-      password: await bcrypt.hash(req.body.password, 10),
-      isAdmin: false,
+    const userIn = await User.findOne({
+      raw: true,
+      where: { email },
     })
-
-
-    req.session.user = user;
-    res.redirect('/');
+    if (!userIn) {
+      const user = await User.create({
+        username: req.body.name,
+        email: req.body.email,
+        phone: req.body.phone,
+        password: await bcrypt.hash(req.body.password, 10),
+        isAdmin: false,
+      })
+      req.session.user = user;
+      res.redirect('/');
+    } else {
+      res.json({ registration: false });
+    }
   } catch (error) {
-    res.json({error: error.message, data: null});
+    res.json({ error: error.message, data: null });
   }
-  
-
-
-  // if(req.body.name === 'fedor') {
-  //   res.json({error: null})
-  // } 
-  // res.json({error: 1})
-
 })
 
 module.exports = RegaRout;
