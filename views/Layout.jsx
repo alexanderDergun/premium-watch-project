@@ -12,6 +12,7 @@ module.exports = function Layout({ children, title, user }) {
         <title>{title}</title>
         <link href="/css/styles.css" rel="stylesheet" />
         <script defer src="/js/client.js" />
+        <script defer src="/js/lk.client.js" />
         <script defer src="/js/clientLogReg/client.reg.js" />
         <script defer src="/js/clientLogReg/client.login.js" />
 
@@ -20,6 +21,14 @@ module.exports = function Layout({ children, title, user }) {
         <header>
           {user
             ? 
+            user.isAdmin 
+              ? 
+              <nav className="navbar  navbar-light bg-light padding20px" id="navHeader">
+              <a className="nav-link" id="loginLink" href="/lk">Привет, Админ:{user.username}</a>
+              <a className="navbar-brand" href="/">Fixed top</a>
+              <a className="nav-link" id="logoutLink" href="/logout">Выйти</a>
+              </nav>
+              :
             <nav className="navbar  navbar-light bg-light padding20px" id="navHeader">
               <a className="nav-link" id="loginLink" href="/lk">Привет, {user.username}</a>
               <a className="navbar-brand" href="/">Fixed top</a>
