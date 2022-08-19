@@ -26,7 +26,7 @@ module.exports = function Rega() {
           Повторите пароль
           <input name="reppassword" type="password" />
         </label>
-        <button type="submit">Зарегистрироваться</button>
+        <button type="submit" className="btn btn-success">Зарегистрироваться</button>
       </form>
     </Layout>
   );

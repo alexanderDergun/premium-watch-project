@@ -1,7 +1,7 @@
 body {
-    background: linear-gradient(-45deg,  rgba(255, 255, 255, 0.88) 50%, rgba(255, 248, 228, 0.88) 52.08%, rgba(255, 255, 255, 0.8272) 100%));
+    background: linear-gradient(-45deg, rgba(255, 255, 255, 0.88) 30%, rgba(255, 248, 228, 0.88) 52.08%, rgba(255, 255, 255, 0.8272) 100%);
     background-size: 400% 400%;
-    animation: gradient 10s ease infinite;
+    animation: gradient 45s ease infinite;
     height: 100vh;
 }
 
@@ -21,6 +21,11 @@ body {
 
 h1 {
     font-size: 64px;
+    margin-bottom: 40px;
+}
+
+h4 {
+    margin-bottom: 40px;
 }
 
 .padding20px {
@@ -31,12 +36,13 @@ h1 {
 
 .container {
     display: flex;
-    margin-top: 80px;
+    margin-top: 40px;
 }
 
 .containerLeft {
     display: flex;
     flex-direction: column;
+    padding-right: 40px;
 }
 
 
@@ -49,11 +55,13 @@ h1 {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    margin-bottom: 20px;
 }
 
 .catalogArrows {
     display: flex;
     flex-direction: row;
+    gap: 0 15px;
 }
 
 .catalogList {
@@ -71,19 +79,132 @@ h1 {
     background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.51) 0.01%, rgba(210, 210, 210, 0.51) 100%);
     /* filter: drop-shadow(-9px 5px 80px rgba(0, 0, 0, 0.13)); */
     border-radius: 8px;
-
+    justify-content: space-evenly
 }
 
-.cardContainerImg {
+/* .cardContainerImg {
     display: inline-block;
     width: 100%;
-}
+} */
 
 
 .cardImg {
     width: 120px;
 }
 
+.cardBtn {
+    border-radius: 10px;
+}
+
 /* Modal styles */
 
 #modal-container {}
+
+/* Slider */
+
+/* Grow */
+.grow {
+    transition-duration: 0.5s;
+    transition-property: transform;
+}
+
+.grow:hover {
+    transform: scale(1.1);
+}
+
+#regForm,
+#logForm,
+#lk,
+#fixData {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 20px;
+    position: absolute;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.51) 0.01%, rgba(210, 210, 210, 0.51) 100%);
+    width: 400px;
+    background-color: ;
+    top: 20vh;
+    left: 40vw;
+    border-radius: 8px;
+}
+
+label {}
+
+input {
+    width: 360px;
+}
+
+button {
+    margin: 20px;
+}
+
+.custom-btn {
+
+    color: #fff;
+    border-radius: 5px;
+    padding: 10px 25px;
+    font-family: 'Lato', sans-serif;
+    font-weight: 500;
+    background: transparent;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    display: inline-block;
+    box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, .5),
+        7px 7px 20px 0px rgba(0, 0, 0, .1),
+        4px 4px 5px 0px rgba(0, 0, 0, .1);
+    outline: none;
+}
+
+.btn {
+    margin-left: 0;
+}
+
+.btn-success {
+    background-color: #6CC002;
+}
+
+.btn-light {
+    color: #6CC002;
+    background: transparent;
+    border-color: #6CC002;
+}
+
+/* 16 */
+.btn-16 {
+    border: none;
+    color: #6CC002;
+}
+
+.btn-16:after {
+    position: absolute;
+    content: "";
+    width: 0;
+    height: 100%;
+    top: 0;
+    left: 0;
+    direction: rtl;
+    z-index: -1;
+    box-shadow:
+        -7px -7px 20px 0px #fff9,
+        -4px -4px 5px 0px #fff9,
+        7px 7px 20px 0px #0002,
+        4px 4px 5px 0px #0001;
+    transition: all 0.3s ease;
+}
+
+.btn-16:hover {
+    color: #6CC002;
+}
+
+.btn-16:hover:after {
+    left: auto;
+    right: 0;
+    width: 100%;
+}
+
+.btn-16:active {
+    top: 2px;
+}
