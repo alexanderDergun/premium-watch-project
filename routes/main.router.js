@@ -32,10 +32,10 @@ MainRouter.get('/:id/modal', async (req,res) => {
         const card = await Watch.findByPk(id);
         res.renderComponent(WatchModal, { card });
     } catch {
-        res.json({
-            error: `Часов с таким id ${id} не существует`,
-            data: null,
-        })
+        // res.json({
+        //     // error: `Часов с таким id ${id} не существует`,
+        //     // data: null,
+        // })
     }
 });
 
