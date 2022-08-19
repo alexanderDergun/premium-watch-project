@@ -12,7 +12,8 @@ module.exports = function Main({ user, watchArr }) {
                     <div className='headerContainer'>
                         <h1>
                             Watches that show much
-                            more than just time ! 😵
+                            more than just time ! 
+                            😵
                         </h1>
                         <h4>
                             Handpicked collection of premium time keepers

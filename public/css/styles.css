@@ -1,5 +1,5 @@
 body {
-    background: linear-gradient(-45deg,  rgba(255, 255, 255, 0.88) 30%, rgba(255, 248, 228, 0.88) 52.08%, rgba(255, 255, 255, 0.8272) 100%);
+    background: linear-gradient(-45deg, rgba(255, 255, 255, 0.88) 30%, rgba(255, 248, 228, 0.88) 52.08%, rgba(255, 255, 255, 0.8272) 100%);
     background-size: 400% 400%;
     animation: gradient 45s ease infinite;
     height: 100vh;
@@ -80,7 +80,6 @@ h4 {
     /* filter: drop-shadow(-9px 5px 80px rgba(0, 0, 0, 0.13)); */
     border-radius: 8px;
     justify-content: space-evenly
-
 }
 
 /* .cardContainerImg {
@@ -100,3 +99,5 @@ h4 {
 /* Modal styles */
 
 #modal-container {}
+
+/* Slider */
