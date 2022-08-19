@@ -15,6 +15,8 @@ module.exports = function Layout({ children, title, user }) {
         <script defer src="/js/lk.client.js" />
         <script defer src="/js/clientLogReg/client.reg.js" />
         <script defer src="/js/clientLogReg/client.login.js" />
+        <script defer src="/js/modalClient.js" />
+
 
       </head>
       <body>
