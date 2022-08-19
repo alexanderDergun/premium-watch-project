@@ -1,9 +1,9 @@
-"use strict";
 const { Model } = require("sequelize");
 module.exports = (sequelize, DataTypes) => {
   class CustomWatch extends Model {
-    static associate(models) {
+    static associate({User}) {
       // define association here
+      CustomWatch.belongsTo(User, { foreignKey: "userId" });
     }
   }
 
@@ -20,7 +20,7 @@ module.exports = (sequelize, DataTypes) => {
     },
     picture: {
       type: DataTypes.TEXT,
-      allowNull: false,
+      // allowNull: false,
     },
     description: {
       type: DataTypes.TEXT,
@@ -31,7 +31,11 @@ module.exports = (sequelize, DataTypes) => {
     },
     userId: {
       type: DataTypes.INTEGER,
-      allowNull: false,
+      // allowNull: false,
+      references: {
+        model: "Users",
+        key: "id",
+      }
     },
     createdAt: {
       allowNull: false,

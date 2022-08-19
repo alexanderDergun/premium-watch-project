@@ -4,7 +4,11 @@ const AddNewFile = require("../views/AddNewFile");
 const { query } = require("express");
 const LkRout = require("express").Router();
 const { User } = require("../db/models");
+
 const { Watch } = require("../db/models");
+
+const { CustomWatch } = require("../db/models");
+
 
 LkRout.get("/", (req, res) => {
   res.renderComponent(Lk, {});
@@ -13,6 +17,10 @@ LkRout.get("/", (req, res) => {
 LkRout.get("/editor", (req, res) => {
   res.renderComponent(FixData, {});
 });
+
+LkRout.post('/editor', (req,res) => {
+  res.send('Ochko')
+})
 
 LkRout.put("/editor", async (req, res) => {
   const { name, email, phone, password } = req.body;
@@ -32,10 +40,11 @@ LkRout.put("/editor", async (req, res) => {
 
 });
 
+
+
 LkRout.get("/newFile", (req, res) => {
   res.renderComponent(AddNewFile, {});
 });
-
 
 
 LkRout.post("/newFile", async (req, res) => {

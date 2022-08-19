@@ -25,6 +25,7 @@ module.exports = function Lk ({user}) {
             <>
             <a className="btn btn-dark" href="/lk/editor">Изменить данные</a>
             <a className="btn btn-dark" href="/lk/newFile">Добавить эскиз</a>
+
             <div>
                 <label>Мои заказы</label>
                 <ul>

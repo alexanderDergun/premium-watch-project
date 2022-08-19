@@ -25,6 +25,10 @@ module.exports = {
       userId: {
         type: Sequelize.INTEGER,
         allowNull: false,
+        references: {
+          model: "Users",
+          key: "id",
+        }
       },
       createdAt: {
         allowNull: false,
@@ -36,9 +40,9 @@ module.exports = {
       },
     };
 
-    await queryInterface.createTable("CustomWatch", attributes);
+    await queryInterface.createTable("CustomWatches", attributes);
   },
   async down(queryInterface) {
-    await queryInterface.dropTable("CustomWatch");
+    await queryInterface.dropTable("CustomWatches");
   },
 };
