@@ -20,8 +20,9 @@ module.exports = function Main({ user, watchArr }) {
                         </h4>
                     </div>
                     <div className='catalogContainer'>
+                    <hr></hr>
                         <div className='catalogHeader'>
-                            <span> Catalog </span>
+                            <span> <h5>Catalog</h5> </span>
                             <div className='catalogArrows'>
 
                                 <div className='leftArrow'>
