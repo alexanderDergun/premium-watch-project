@@ -21,7 +21,7 @@ module.exports = function Layout({ children, title, user }) {
           {user
             ? 
             <nav className="navbar  navbar-light bg-light padding20px" id="navHeader">
-              <a className="nav-link" id="loginLink" href="/">Привет, {user.username}</a>
+              <a className="nav-link" id="loginLink" href="/lk">Привет, {user.username}</a>
               <a className="navbar-brand" href="/">Fixed top</a>
               <a className="nav-link" id="logoutLink" href="/logout">Выйти</a>
               </nav>
