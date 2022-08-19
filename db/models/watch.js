@@ -1,9 +1,10 @@
-const { Model } = require("sequelize");
+const { Model } = require('sequelize');
+
 module.exports = (sequelize, DataTypes) => {
   class Watch extends Model {
     static associate({ User }) {
       // define association here
-      Watch.belongsTo(User, { foreignKey: "userId" });
+      Watch.belongsTo(User, { foreignKey: 'userId' });
     }
   }
 
@@ -34,8 +35,8 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.INTEGER,
       allowNull: false,
       references: {
-        model: "Users",
-        key: "id",
+        model: 'Users',
+        key: 'id',
       },
     },
     createdAt: {
@@ -50,8 +51,8 @@ module.exports = (sequelize, DataTypes) => {
 
   const options = {
     sequelize,
-    modelName: "Watch",
-    tableName: "Watches",
+    modelName: 'Watch',
+    tableName: 'Watches',
   };
 
   Watch.init(attributes, options);

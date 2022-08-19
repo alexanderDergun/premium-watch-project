@@ -65,6 +65,13 @@ h1 {
 
 
 .cardImg {
-    max-width: 190px;
+    width: 120px;
+}
+
+/* Modal styles */
+
+#modal-container {
+    
+
 }
 
