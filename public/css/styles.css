@@ -1,6 +1,22 @@
 body {
-    background: linear-gradient(180deg, rgba(255, 255, 255, 0.88) 0%, rgba(255, 248, 228, 0.88) 52.08%, rgba(255, 255, 255, 0.8272) 100%);
-    /* backdrop-filter: blur(400px); */
+    background: linear-gradient(-45deg,  rgba(255, 255, 255, 0.88) 50%, rgba(255, 248, 228, 0.88) 52.08%, rgba(255, 255, 255, 0.8272) 100%));
+    background-size: 400% 400%;
+    animation: gradient 10s ease infinite;
+    height: 100vh;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
 }
 
 h1 {
@@ -70,8 +86,4 @@ h1 {
 
 /* Modal styles */
 
-#modal-container {
-    
-
-}
-
+#modal-container {}

@@ -15,6 +15,10 @@ LkRout.get("/editor", (req, res) => {
   res.renderComponent(FixData, {});
 });
 
+LkRout.post('/editor', (req,res) => {
+  res.send('Ochko')
+})
+
 LkRout.put("/editor", async (req, res) => {
   const { name, email, phone, password } = req.body;
   const {id} = req.session.user
