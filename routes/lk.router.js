@@ -4,6 +4,7 @@ const AddNewFile = require("../views/AddNewFile");
 const { query } = require("express");
 const LkRout = require("express").Router();
 const { User } = require("../db/models");
+const { Watch } = require("../db/models");
 
 LkRout.get("/", (req, res) => {
   res.renderComponent(Lk, {});
@@ -33,6 +34,27 @@ LkRout.put("/editor", async (req, res) => {
 
 LkRout.get("/newFile", (req, res) => {
   res.renderComponent(AddNewFile, {});
+});
+
+
+
+LkRout.post("/newFile", async (req, res) => {
+  const { watchName, picture, description, price } = req.body;
+  const {id} = req.session.user
+
+  try {
+      const data = await Watch.create(
+        { 
+          watchName,
+          picture,
+          description,
+          price,
+          userId: id,
+        });
+  } catch (error) {
+    res.status(500).send('Something broke!');
+  }
+
 });
 
 module.exports = LkRout;

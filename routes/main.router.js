@@ -30,7 +30,7 @@ MainRouter.get('/:id/modal', async (req,res) => {
 
     try {
         const card = await Watch.findByPk(id);
-        res.renderComponent(WatchModal, { card });
+        res.renderComponent(WatchModal, { card }, {doctype: false});
     } catch {
         res.json({
             error: `Часов с таким id ${id} не существует`,
@@ -38,6 +38,28 @@ MainRouter.get('/:id/modal', async (req,res) => {
         })
     }
 });
+
+
+MainRouter.delete('/:id/modal', async(req, res) => {
+    const id = Number(req.params.id);
+    try {
+        const card = await Watch.destroy(
+            {where: {id}}
+        );
+        res.redirect('/')
+    } catch {
+        res.json({
+            error: `Часов с таким id ${id} не существует`,
+            data: null,
+        })
+    }
+
+})
+
+
+
+
+
 
 
 module.exports = MainRouter;

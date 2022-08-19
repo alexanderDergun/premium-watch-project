@@ -1,4 +1,4 @@
-const {application} =require('express')
+// const {application} =require('express')
 const regForm = document.getElementById('regForm');
 
 if (regForm) {
