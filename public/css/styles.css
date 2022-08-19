@@ -80,6 +80,7 @@ h4 {
     /* filter: drop-shadow(-9px 5px 80px rgba(0, 0, 0, 0.13)); */
     border-radius: 8px;
     justify-content: space-evenly
+    
 }
 
 /* .cardContainerImg {
@@ -101,3 +102,14 @@ h4 {
 #modal-container {}
 
 /* Slider */
+
+/* Grow */
+.grow {
+	transition-duration: 0.5s;
+	transition-property: transform;
+}
+
+.grow:hover {
+    transform: scale(1.1);
+}
+
