@@ -114,7 +114,8 @@ h4 {
 
 #regForm,
 #logForm,
-#lk {
+#lk,
+#fixData {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -132,7 +133,6 @@ h4 {
 label {}
 
 input {
-
     width: 360px;
 }
 
