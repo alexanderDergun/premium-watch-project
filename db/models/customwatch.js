@@ -1,11 +1,9 @@
 const { Model } = require("sequelize");
 module.exports = (sequelize, DataTypes) => {
-  class User extends Model {
-    static associate({ Watch, CustomWatch }) {
+  class CustomWatch extends Model {
+    static associate({User}) {
       // define association here
-
-      User.hasMany(Watch, { foreignKey: "userId" });
-      User.hasMany(CustomWatch, { foreignKey: "userId" });
+      CustomWatch.belongsTo(User, { foreignKey: "userId" });
     }
   }
 
@@ -16,26 +14,28 @@ module.exports = (sequelize, DataTypes) => {
       primaryKey: true,
       type: DataTypes.INTEGER,
     },
-    username: {
+    watchName: {
       type: DataTypes.TEXT,
       allowNull: false,
     },
-    email: {
+    picture: {
+      type: DataTypes.TEXT,
+      // allowNull: false,
+    },
+    description: {
       type: DataTypes.TEXT,
       allowNull: false,
-      unique: true,
     },
-    phone: {
+    price: {
       type: DataTypes.INTEGER,
-      allowNull: false,
     },
-    password: {
-      type: DataTypes.TEXT,
-      allowNull: false,
-    },
-    isAdmin: {
-      type: DataTypes.BOOLEAN,
-      allowNull: false,
+    userId: {
+      type: DataTypes.INTEGER,
+      // allowNull: false,
+      references: {
+        model: "Users",
+        key: "id",
+      }
     },
     createdAt: {
       allowNull: false,
@@ -49,10 +49,10 @@ module.exports = (sequelize, DataTypes) => {
 
   const options = {
     sequelize,
-    modelName: "User",
-    tableName: "Users",
+    modelName: "CustomWatch",
+    tableName: "CustomWatches",
   };
 
-  User.init(attributes, options);
-  return User;
+  CustomWatch.init(attributes, options);
+  return CustomWatch;
 };

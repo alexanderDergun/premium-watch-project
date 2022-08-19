@@ -20,7 +20,7 @@ module.exports = (sequelize, DataTypes) => {
     },
     picture: {
       type: DataTypes.TEXT,
-      allowNull: false,
+      // allowNull: false,
     },
     description: {
       type: DataTypes.TEXT,
